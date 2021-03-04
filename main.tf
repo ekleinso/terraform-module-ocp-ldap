@@ -25,6 +25,7 @@ data "template_file" "k8s_ldap_sync_yaml" {
     insecure = var.ldap_certificate != "" ? false : true
     certificate = var.ldap_certificate
     ldap_type = var.ldap_type
+    bind_password = var.ldap_password
   }
 }
 
