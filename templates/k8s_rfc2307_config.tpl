@@ -4,7 +4,7 @@ url: ${ldap_host}
 bindDN: ${bind_dn},${base_dn}
 bindPassword: ${bind_password}
 insecure: ${insecure}
-${insecure ? "" : "ca: ../certs/ca.crt.pem"}
+${insecure ? "" : "ca: ${certificate}"}
 groupUIDNameMapping:
   "cn=cloudadmins,ou=groups,${base_dn}": ${cluster_name}-Admins
   "cn=cloudgrp,ou=groups,${base_dn}": ${cluster_name}-Users

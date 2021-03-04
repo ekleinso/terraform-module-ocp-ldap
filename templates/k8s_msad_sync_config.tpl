@@ -4,7 +4,7 @@ url: ${ldap_host}
 bindDN: ${bind_dn},cn=Users,${base_dn}
 bindPassword: ${bind_password}
 insecure: ${insecure}
-${insecure ? "" : "ca: ../certs/ca.crt.pem"}
+${insecure ? "" : "ca: ${certificate}"}
 groupUIDNameMapping:
   "cn=ocpGroup1,cn=Users,${base_dn}": msad-${cluster_name}-admins 
 augmentedActiveDirectory:
