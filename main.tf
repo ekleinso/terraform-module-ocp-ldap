@@ -48,7 +48,7 @@ resource "null_resource" "ocp_ldap" {
 set -ex
 
 binaries/oc -n openshift-config create secret generic ldap-bind-password-${var.cluster_id} --from-literal=bindPassword=${var.ldap_password}
-if [ -f ${var.ldap_certificate} ]
+if [ -f "${var.ldap_certificate}" ]
 then
    binaries/oc -n openshift-config create configmap ${local.oauth_cert} --from-file=ca.crt=${var.ldap_certificate}
 fi
